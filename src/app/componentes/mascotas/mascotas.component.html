@@ -1,0 +1,22 @@
+<section id="gallery">
+    <div class="container">
+        <div class="row">
+            <div class="card-group mt-3">
+
+                <div class="card" *ngFor="let mascotas of mascotas,let i = index">
+
+                    <img [src]="mascotas.imagen" alt="Card image" width="305" height="285">
+                    <div class="card-body">
+                        <h4 class="card-title">{{mascotas.nombre | uppercase}}</h4>
+                        <h6>Desacripcion</h6>
+                        <p class="card-text">{{mascotas.descripcion}}</p>
+                        <p class="card-text">Edad: {{mascotas.edad}}</p>
+                        <a href="" class="btn btn-outline-success btn-sm">Leer mas</a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
