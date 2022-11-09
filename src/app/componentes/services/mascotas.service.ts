@@ -34,7 +34,11 @@ getMascotas(){
     return this.Mascotas;
 }
 
+
+
 }
+
+
 
 export interface InterfaeceMascotas {
     nombre :string,
@@ -42,3 +46,4 @@ export interface InterfaeceMascotas {
     imagen:string,
     edad:string
 }
+

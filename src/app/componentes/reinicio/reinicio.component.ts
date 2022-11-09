@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BotonesServicio,InterfaeceBotones } from '../services/botones.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-reinicio',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReinicioComponent implements OnInit {
 
-  constructor() { }
+  botones:InterfaeceBotones[]=[];
 
-  ngOnInit(): void {
+  constructor(
+    private _botones :BotonesServicio,
+    private _router:Router)
+    { }
+
+  ngOnInit(): void { 
+    this.botones= this. _botones.getBotones();
+    console.log(this.botones)
+  }
+
+  Mascotas(index:number){
+    console.log("Index:",index);
+    this._router.navigate(['/mascotas',index]);
   }
 
 }

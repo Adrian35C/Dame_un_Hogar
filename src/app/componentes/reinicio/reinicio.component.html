@@ -4,13 +4,22 @@
             <div class="titulo">
                 Recupera tu Cuenta
             </div>
-            <form id="loginform">
-                <input type="text" name="Correo Electronico" placeholder="Correo Electronico" required>
+
+            <div *ngFor="let botones of botones,let i = index">
+                <form id="loginform">
+
+                    <!--<ng-container *ngIf="Botones[0].Titulo==Regresar ;else no">
+                        <input type="text" name="Correo Electronico" placeholder="Correo Electronico" required>
+                    </ng-container>-->
+                    <ng-template #no>
+                        <input type="text" name="Correo Electronico" placeholder="Correo Electronico">
+                    </ng-template>
 
 
+                    <button type="submit" title="Mandar Correo" name="Ingresar">{{botones.titulo}}</button>
 
-                <button type="submit" title="Mandar Correo" name="Ingresar">Mandar Correo</button>
-            </form>
+                </form>
+            </div>
             <div class="pie-form">
 
                 <a routerLink="/Inicio">No tengo acceso a mi Correo</a>
